@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% if titulo %}
+    <h1>{{ titulo }}</h1>
+    {% endif %}
+</head>
+
+<body>
+    {% if poster_url %}
+    <img src="{{ poster_url }}" alt="Poster do filme">
+    {% else %}
+    <p>Filme não encontrado.</p>
+    {% endif %}
+
+    {% if overview %}
+    <h2>Sinopse</h2>
+    <p>{{ overview }}</p>
+    {% endif %}
+
+    {% if rating %}
+    <h2>Avaliação</h2>
+    <p>{{ rating }}</p>
+    {% endif %}
+
+    {% if lancamento %}
+    <h2>Data de lançamento:</h2>
+    <p>{{ lancamento }}</p>
+    {% endif %}
+
+
+    {% if popularidade %}
+    <h2>Popularidade</h2>
+    <p>{{ popularidade }}</p>
+    {% endif %}
+
+
+
+</body>
+
+</html>
