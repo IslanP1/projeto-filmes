@@ -1,42 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    {% if titulo %}
-    <h1>{{ titulo }}</h1>
-    {% endif %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../static/css/styles.css" rel="stylesheet">
+    
 </head>
 
-<body>
-    {% if poster_url %}
-    <img src="{{ poster_url }}" alt="Poster do filme">
-    {% else %}
-    <p>Filme não encontrado.</p>
-    {% endif %}
+<body class="container">
 
-    {% if overview %}
-    <h2>Sinopse</h2>
-    <p>{{ overview }}</p>
-    {% endif %}
+    <div class="titulo">
+        {% if titulo %}
+        <h1>{{ titulo }}</h1>
+        {% endif %}
+    </div>
 
-    {% if rating %}
-    <h2>Avaliação</h2>
-    <p>{{ rating }}</p>
-    {% endif %}
+    <div>
+        <div >
+            {% if poster_url %}
+            <img class="imagem" src="{{ poster_url }}" alt="Poster do filme">
+        </div>
+        <div>
+            {% else %}
+            <p>Filme não encontrado.</p>
+            {% endif %}
+        </div>
+    </div>
 
-    {% if lancamento %}
-    <h2>Data de lançamento:</h2>
-    <p>{{ lancamento }}</p>
-    {% endif %}
-
-
-    {% if popularidade %}
-    <h2>Popularidade</h2>
-    <p>{{ popularidade }}</p>
-    {% endif %}
-
-
-
+    <div>
+        {% if overview %}
+        <h2>Sinopse</h2>
+        <p>{{ overview }}</p>
+        {% endif %}
+        {% if rating %}
+        <h2>Avaliação</h2>
+        <p>{{ rating }}</p>
+        {% endif %}
+        {% if lancamento %}
+        <h2>Data de lançamento:</h2>
+        <p>{{ lancamento }}</p>
+        {% endif %}
+        {% if popularidade %}
+        <h2>Popularidade</h2>
+        <p>{{ popularidade }}</p>
+        {% endif %}
+    </div>
+    <form method="post">
+        <input type="submit" value="retornar">
+    </form>
 </body>
 
 </html>
